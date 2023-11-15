@@ -1,0 +1,119 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-11-09T05:15:25.569Z",
+    "end": "2023-11-09T05:16:07.232Z",
+    "duration": 41663,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "81925165-f61f-4d52-bb5d-951a0bf23050",
+      "title": "",
+      "fullFile": "cypress\\e2e\\Demo.cy.js",
+      "file": "cypress\\e2e\\Demo.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "b623f59e-c158-4fe1-bc15-e23ddfea011d",
+          "title": "Demo1",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "search in google",
+              "fullTitle": "Demo1 search in google",
+              "timedOut": null,
+              "duration": 20316,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\Demo.cy.js\\\\Demo1 -- search in google.png\"\n    ]\n  ]\n}",
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/\");\ncy.url().should('include', 'orangehrmlive.com').and('contain', 'orangehrm').and('not.contain', 'greehrm');\ncy.title().should('include', 'Orange');\ncy.xpath(\"//a\").should('have.length', 5);\ncy.screenshot();\ncy.xpath(\"//input[@name='username']\").type(\"Admin\");\ncy.xpath(\"//input[@name='password']\").type(\"admin123\");\ncy.xpath(\"//button[@type='submit']\").click();",
+              "err": {},
+              "uuid": "f22f1b47-7863-48e5-881a-a40ec06cb814",
+              "parentUUID": "b623f59e-c158-4fe1-bc15-e23ddfea011d",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Login POM",
+              "fullTitle": "Demo1 Login POM",
+              "timedOut": null,
+              "duration": 15726,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/\");\ncy.fixture('config').then(data => {\n  const ln = new _Login.default();\n  ln.setUserName(data.userName);\n  ln.setPassword(data.password);\n  ln.clickSubmit();\n  ln.verfiyLogin();\n  cy.wait(5000);\n  const dayjs = __webpack_require__(/*! dayjs */ \"./node_modules/dayjs/dayjs.min.js\");\n  const todaysDate = dayjs().format('YYYY-DD-MM');\n  const le = new _Leave.default();\n  le.applyLeave(data.empName, todaysDate);\n});",
+              "err": {},
+              "uuid": "edc6a930-a064-4332-9265-1c02f6ba7081",
+              "parentUUID": "b623f59e-c158-4fe1-bc15-e23ddfea011d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f22f1b47-7863-48e5-881a-a40ec06cb814",
+            "edc6a930-a064-4332-9265-1c02f6ba7081"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 36042,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
